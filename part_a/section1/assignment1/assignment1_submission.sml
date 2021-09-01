@@ -157,5 +157,21 @@ fun oldest (dates: (int*int*int) list) =
  * second argument multiple times has no more effect than having it once. (Hint:
  * Remove duplicates, then use previous work.) *)
 
+fun remove (x,[]) = []
+  | remove (x,l as y::ys) = if x = y then remove(x,ys) else y::remove(x,ys)
+
+fun remove_duplicates [] = []
+  | remove_duplicates (l as x::xs) = x::remove_duplicates(remove(x,xs))
+
 fun number_in_months_challenge(dates: (int*int*int) list, months: int list) = 
-  0
+  let val months = remove_duplicates(months)
+  in 
+    number_in_months(dates, months)
+  end
+
+fun dates_in_months_challenge(dates: (int*int*int) list, months: int list) = 
+  let val months = remove_duplicates(months)
+  in 
+    dates_in_months(dates, months)
+  end
+
