@@ -175,3 +175,43 @@ fun dates_in_months_challenge(dates: (int*int*int) list, months: int list) =
     dates_in_months(dates, months)
   end
 
+(* Write a function reasonable_date that takes a date and determines if it
+ * describes a real date in the common era. A “real date” has a positive year
+ * (year 0 did not exist), a month between 1 and 12, and a day appropriate for
+ * the month. Solutions should properly handle leap years. Leap years are years
+ * that are either divisible by 400 or divisible by 4 but not divisible by 100.
+ * (Do not worry about days possibly lost in the conversion to the Gregorian
+ * calendar in the Late 1500s.) *)
+fun is_leap_year(year: int) =
+  (year mod 400 = 0) orelse (year mod 4 = 0 andalso not (year mod 100 = 0))
+
+fun is_in(element: int, int_list: int list) = 
+  if null int_list
+  then false
+  else if element = hd int_list
+  then true
+  else is_in(element, tl int_list)
+
+fun is_day_in_month(date: int*int*int) = 
+  let
+    val year = #1 date
+    val month = #2 date
+    val day = #3 date
+    val month30 = [4,6,9,11]
+    val month31 = [1,3,5,7,8,10,12]
+  in
+    if day < 1 orelse day > 31
+    then false
+    else if is_in(month,month31)
+      then true
+      else if is_in(month,month30) andalso day <= 30  
+        then true
+        else if is_leap_year(year) andalso day <= 29
+          then true
+          else day <= 28
+  end
+
+fun reasonable_date (date: int*int*int) = 
+  if (#1 date) <= 0 orelse (#2 date) < 1 orelse (#2 date) > 12
+  then false
+  else is_day_in_month(date)
