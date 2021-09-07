@@ -8,3 +8,11 @@ val test_is_older_with_correct_order = is_older(older_date, newer_date) = true
 val test_is_older_with_incorrect_order = is_older(newer_date, older_date) =
   false
 val test_is_older_with_same_date = is_older(older_date, older_date) = false
+
+(* problem 2 *)
+
+val dates = [(1992,10,21), (1993,12,25), (1996,10,6)]
+
+val test_number_in_month = number_in_month(dates, 10) = 2
+val test_number_in_month_with_no_date_in_month = number_in_month(dates, 1) = 0
+val test_number_in_month_with_null_dates = number_in_month([], 10) = 0
