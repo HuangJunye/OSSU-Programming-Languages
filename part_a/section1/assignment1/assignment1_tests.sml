@@ -48,3 +48,9 @@ val test_dates_in_months_with_no_date_in_months = dates_in_months(dates, months_
 val test_dates_in_months_with_some_date_in_months = dates_in_months(dates, months_yes_and_no)
 = [(1992,10,21), (1996,10,6)]
 val test_dates_in_months_with_null_dates = dates_in_months([], months_yes) = []
+
+(* problem 6 *)
+
+val month_list = ["January", "February", "March", "April", "May", "June", "July", 
+                  "August", "September", "October", "November", "December"]
+val test_get_nth = get_nth(month_list, 2) = "February"
