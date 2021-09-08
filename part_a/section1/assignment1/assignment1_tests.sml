@@ -35,3 +35,16 @@ val test_dates_in_month_with_no_date_in_month = dates_in_month(dates, month_no)
 = []
 val test_dates_in_month_with_null_dates = dates_in_month([], month_yes) = []
 
+(* problem 5 *)
+
+val months_yes = [10,12]
+val months_no = [1,2]
+val months_yes_and_no = [1,10]
+
+val test_dates_in_months = dates_in_months(dates, months_yes) = [(1992,10,21),
+ (1996,10,6), (1993,12,25)]
+val test_dates_in_months_with_no_date_in_months = dates_in_months(dates, months_no)
+= []
+val test_dates_in_months_with_some_date_in_months = dates_in_months(dates, months_yes_and_no)
+= [(1992,10,21), (1996,10,6)]
+val test_dates_in_months_with_null_dates = dates_in_months([], months_yes) = []
