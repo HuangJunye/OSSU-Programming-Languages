@@ -42,7 +42,7 @@ val months_no = [1,2]
 val months_yes_and_no = [1,10]
 
 val test_dates_in_months = dates_in_months(dates, months_yes) = [(1992,10,21),
- (1996,10,6), (1993,12,25)]
+ (1993,12,25), (1996,10,6)]
 val test_dates_in_months_with_no_date_in_months = dates_in_months(dates, months_no)
 = []
 val test_dates_in_months_with_some_date_in_months = dates_in_months(dates, months_yes_and_no)
@@ -54,3 +54,7 @@ val test_dates_in_months_with_null_dates = dates_in_months([], months_yes) = []
 val month_list = ["January", "February", "March", "April", "May", "June", "July", 
                   "August", "September", "October", "November", "December"]
 val test_get_nth = get_nth(month_list, 2) = "February"
+
+(* problem 7 *)
+
+val test_date_to_string = date_to_string(hd dates) = "October 21, 1992"
