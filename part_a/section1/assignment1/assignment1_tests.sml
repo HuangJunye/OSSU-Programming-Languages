@@ -54,3 +54,11 @@ val test_get_nth = get_nth(month_list, 2) = "February"
 val test_date_to_string = date_to_string(hd dates) = "October 21, 1992"
 
 (* problem 8 *)
+val sum = 9
+val sum_equal = 10
+val int_list = [0,1,2,3,4,5]
+
+val test_number_before_reaching_sum = number_before_reaching_sum(sum, int_list)
+= 4 
+val test_number_before_reaching_sum_equal = number_before_reaching_sum(sum_equal, int_list)
+= 4 
