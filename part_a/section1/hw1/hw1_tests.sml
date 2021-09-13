@@ -99,3 +99,15 @@ val test_month_range_with_day1_older = month_range(day2,day1) = []
 (* problem 11 *)
 val test_oldest = oldest(dates) = SOME (1992,10,21)
 val test_oldest_with_null_dates = oldest([]) = NONE
+
+(* problem 12: challenge problem *)
+val months_with_duplicates = [10,10,11,12]
+
+val test_number_in_months_challenge =
+  number_in_months_challenge(dates, months_with_duplicates) = 3
+
+val test_number_in_months_challenge_with_no_date_in_months =
+  number_in_months_challenge(dates, [1,2]) = 0
+
+val test_number_in_months_challenge_with_null_dates =
+  number_in_months_challenge([], months) = 0
