@@ -85,3 +85,7 @@ val test_number_before_reaching_sum =
 
 val test_number_before_reaching_sum_equal =
   number_before_reaching_sum(sum_equal, int_list) = 4 
+
+(* problem 9 *)
+val test_what_month = what_month(60) = 3 (* March 1st *)
+
