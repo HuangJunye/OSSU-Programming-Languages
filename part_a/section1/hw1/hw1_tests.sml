@@ -90,10 +90,10 @@ val test_number_before_reaching_sum_equal =
 val test_what_month = what_month(60) = 3 (* March 1st *)
 
 (* problem 10 *)
-val day1 = 10
-val day2 = 140
+val day1 = 31
+val day2 = 34
 
-val test_month_range = month_range(day1,day2) = [1,2,3,4,5]
+val test_month_range = month_range(day1,day2) = [1,2,2,2]
 val test_month_range_with_day1_older = month_range(day2,day1) = []
 
 (* problem 11 *)

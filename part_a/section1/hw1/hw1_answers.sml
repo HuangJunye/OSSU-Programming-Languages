@@ -120,16 +120,9 @@ fun what_month (day: int) =
  * the month of day1+1, ..., and mn is the month of day day2. Note the result
  * will have length day2 - day1 + 1 or length 0 if day1>day2. *)
 fun month_range (day1: int, day2: int) =
-  let 
-    fun fill_list (num1: int, num2: int) =
-      if num1 > num2
-      then []
-      else num1 :: fill_list(num1+1, num2)
-  in 
-    if day1 > day2
-    then []
-    else fill_list(what_month(day1), what_month(day2))
-  end
+  if day1 > day2
+  then []
+  else what_month(day1) :: month_range(day1+1, day2)
 
 (* Write a function oldest that takes a list of dates and evaluates to an
  * (int*int*int) option. It evaluates to NONE if the list has no dates and SOME
