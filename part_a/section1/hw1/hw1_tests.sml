@@ -95,3 +95,7 @@ val day2 = 140
 
 val test_month_range = month_range(day1,day2) = [1,2,3,4,5]
 val test_month_range_with_day1_older = month_range(day2,day1) = []
+
+(* problem 11 *)
+val test_oldest = oldest(dates) = SOME (1992,10,21)
+val test_oldest_with_null_dates = oldest([]) = NONE
