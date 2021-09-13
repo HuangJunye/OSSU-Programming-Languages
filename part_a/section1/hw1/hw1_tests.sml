@@ -111,3 +111,12 @@ val test_number_in_months_challenge_with_no_date_in_months =
 
 val test_number_in_months_challenge_with_null_dates =
   number_in_months_challenge([], months) = 0
+
+(* problem 13: reasonable_date *)
+val test_reasonable_date = reasonable_date((1992,10,21)) = true
+val test_reasonable_date_with_negative_year = reasonable_date((~1,1,1)) = false
+val test_reasonable_date_with_leap_year = reasonable_date((1992,2,29)) = true
+val test_reasonable_date_with_year_multiples_of_100 =
+  reasonable_date((1900,2,29)) = false
+val test_reasonable_date_with_year_multiples_of_400 =
+  reasonable_date((2000,2,29)) = true
